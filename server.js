@@ -81,7 +81,9 @@ app.get('/transformXML', (req, res) => {
 
 	parseString(xml, function (err, result) {
 	    console.log(result);
-	    console.log(util.inspect(result, false, null));
+	    console.log(JSON.stringify(result));
 	});
+
+	res.send('200');
 
 });
