@@ -1,8 +1,8 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 const FuelRest = require('fuel-rest');
-const soap = require('soap');
 const request = require('request-promise');
+var parseString = require('xml2js').parseString;
 var app = express();
 var port = process.env.PORT || 8080;
 
@@ -45,17 +45,26 @@ app.get('/getDataExtensions', (req, res) => {
             const xml = `<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:u="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><s:Header><a:Action s:mustUnderstand="1">Retrieve</a:Action><a:MessageID>urn:uuid:7e0cca04-57bd-4481-864c-6ea8039d2ea0</a:MessageID><a:ReplyTo><a:Address>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</a:Address></a:ReplyTo><a:To s:mustUnderstand="1">https://mct181ddvnpf05z2r5mcclnpt34q.soap.marketingcloudapis.com/Service.asmx</a:To><fueloauth xmlns="http://exacttarget.com">${accessToken}</fueloauth></s:Header><s:Body xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><RetrieveRequestMsg xmlns="http://exacttarget.com/wsdl/partnerAPI"><RetrieveRequest><ObjectType>DataFolder</ObjectType><Properties>Name</Properties><Properties>ID</Properties><Properties>ContentType</Properties><Properties>ParentFolder.AllowChildren</Properties> <Filter xsi:type="par:SimpleFilterPart" xmlns:par="http://exacttarget.com/wsdl/partnerAPI"><Property>ContentType</Property><SimpleOperator>equals</SimpleOperator><Value>dataextension</Value></Filter></RetrieveRequest></RetrieveRequestMsg></s:Body></s:Envelope>`
 
             //https://mct181ddvnpf05z2r5mcclnpt34q.soap.marketingcloudapis.com/etframework.wsdl
+            var soapOptions = {
+				    method: 'POST',
+				    uri: 'https://mct181ddvnpf05z2r5mcclnpt34q.soap.marketingcloudapis.com/Service.asmx',
+				    headers: {
+				        'Content-Type': 'text/xml'
+				    },
+				    body: xml,
+				    json: false // automatically stringifys body to json if true
+				};
 
-            var args = { _xml: xml };
-
-            var url = 'https://mct181ddvnpf05z2r5mcclnpt34q.soap.marketingcloudapis.com/etframework.wsdl';
-
-            soap.createClient(url, (err, client) => {
-            	client.DataFolder(args, (err, result) => {
-            		console.log(result);
-            	});
-            });
-            
+			request(options)
+				.then(function(res) {
+					console.log(res);
+					parseString(res, function (err, result) {
+					    console.log(result);
+					});
+				})
+				.catch(function(err) {
+					console.log(err);
+				})
     	})
     	.catch(function(err){
     		console.log(err);
