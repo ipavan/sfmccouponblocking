@@ -56,14 +56,14 @@ app.get('/getDataExtensions', (req, res) => {
 				};
 
 			request(options)
-				.then(function(res) {
-					console.log(res);
-					parseString(res, function (err, result) {
+				.then(function(response) {
+					console.log(response);
+					parseString(response, function (err, result) {
 					    console.log(result);
 					});
 				})
-				.catch(function(err) {
-					console.log(err);
+				.catch(function(error) {
+					console.log(error);
 				})
     	})
     	.catch(function(err){
