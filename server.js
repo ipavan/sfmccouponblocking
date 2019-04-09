@@ -60,7 +60,7 @@ app.get('/getDataExtensions', (req, res) => {
 					console.log(response);
 					parseString(response, function (err, result) {
 					    console.log(result);
-					    console.log('soap:Body');
+					    console.log(result['soap:Body']);
 					});
 				})
 				.catch(function(error) {
