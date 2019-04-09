@@ -30,8 +30,8 @@ app.get('/getDataExtensions', (req, res) => {
             uri: 'https://mct181ddvnpf05z2r5mcclnpt34q.auth.marketingcloudapis.com/v2/token',
             body: {
               'grant_type': 'client_credentials',
-              'clientId': 'nwbiy6rkgktykoquuixgjhdg',
-              'clientSecret':'1GFFAQ4jNLqo5WTJaiCkqlaJ'
+              'client_id': 'nwbiy6rkgktykoquuixgjhdg',
+              'client_secret':'1GFFAQ4jNLqo5WTJaiCkqlaJ'
             },
             json: true
         }
