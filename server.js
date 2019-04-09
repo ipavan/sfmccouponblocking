@@ -55,7 +55,7 @@ app.get('/getDataExtensions', (req, res) => {
 				    json: false // automatically stringifys body to json if true
 				};
 
-			request(options)
+			request(soapOptions)
 				.then(function(response) {
 					console.log(response);
 					parseString(response, function (err, result) {
