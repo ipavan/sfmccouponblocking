@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 const FuelRest = require('fuel-rest');
+const soap = require('soap');
 const request = require('request-promise');
 var app = express();
 var port = process.env.PORT || 8080;
