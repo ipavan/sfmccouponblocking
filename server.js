@@ -52,7 +52,7 @@ app.get('/getDataExtensions', (req, res) => {
 				        'Content-Type': 'text/xml'
 				    },
 				    body: xml,
-				    json: false // automatically stringifys body to json if true
+				    json: false 
 				};
 
 			let voucherDEs = [];
@@ -76,27 +76,4 @@ app.get('/getDataExtensions', (req, res) => {
     	.catch(function(err){
     		console.log(err);
     	});
-});
-
-
-app.get('/transformXML', (req, res) => {
-
-	let xml = `<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><env:Header xmlns:env="http://www.w3.org/2003/05/soap-envelope"><wsa:Action>RetrieveResponse</wsa:Action><wsa:MessageID>urn:uuid:3a7f63ad-cec5-4485-a0f5-ed3ae1bea760</wsa:MessageID><wsa:RelatesTo>urn:uuid:7e0cca04-57bd-4481-864c-6ea8039d2ea0</wsa:RelatesTo><wsa:To>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</wsa:To><wsse:Security><wsu:Timestamp wsu:Id="Timestamp-fde72d80-69bc-4865-8a8b-e40adaaf5d05"><wsu:Created>2019-04-10T10:11:40Z</wsu:Created><wsu:Expires>2019-04-10T10:16:40Z</wsu:Expires></wsu:Timestamp></wsse:Security></env:Header><soap:Body><RetrieveResponseMsg xmlns="http://exacttarget.com/wsdl/partnerAPI"><OverallStatus>OK</OverallStatus><RequestID>92b4e3f3-9262-4190-8bfe-0f3455535e12</RequestID><Results xsi:type="DataExtension"><PartnerKey xsi:nil="true" /><ObjectID xsi:nil="true" /><Name>Gutschein_OTTO_April_2019</Name></Results><Results xsi:type="DataExtension"><PartnerKey xsi:nil="true" /><ObjectID xsi:nil="true" /><Name>Gutschein_ASOS_April_2019</Name></Results></RetrieveResponseMsg></soap:Body></soap:Envelope>`;
-
-	parseString(xml, function (err, result) {
-	    let envelope = result['soap:Envelope']['soap:Body'][0]['RetrieveResponseMsg'][0];
-	    let results = envelope['Results'];
-	    console.log(results);
-	    console.log(JSON.stringify(results));
-	    let voucherDEs = [];
-	    results.forEach(function (item) {
-	    	let name = item['Name'][0]
-		    console.log(name);
-		    voucherDEs.push(name);
-		});
-		res.send(voucherDEs);
-	    // let more = envelope['$'];
-	    // console.log(more);
-	});
-
 });
