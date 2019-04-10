@@ -56,7 +56,7 @@ $(document).ready(function(){
 
     	let newCoupon = $("#radio-11").is(":checked");
 
-    	if (newCoupon) {
+    	if (!newCoupon) {
     		let output = `<table align="center" border="0" cellpadding="0" cellspacing="0" class="tmp--container" style="background-color:#ffffff;" width="100%">
 						    <tr>
 						      <td align="left" style="color:#4f4f4f;font-family:Arial, sans-serif;font-size:16px;font-style:normal;font-weight:normal;line-height:20px;padding:20px;text-align:center;vertical-align:top;" width="100%">
