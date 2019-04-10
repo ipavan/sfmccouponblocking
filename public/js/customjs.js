@@ -22,7 +22,7 @@ $(document).ready(function(){
              
             let output = `
 							 	<div id="replaceable">
-								  <label class="slds-form-element__label" for="select-01">Select Label</label>
+								  <label class="slds-form-element__label" for="select-01">Gutschein Auswahl</label>
 								  <div class="slds-form-element__control">
 								    <div class="slds-select_container">
 								      <select class="slds-select" id="dename">
@@ -68,7 +68,7 @@ $(document).ready(function(){
 <div class="code_none" id="cb-block-code"><table align="center" border="0" cellpadding="0" cellspacing="0" class="tmp--container" style="background-color:#ffffff;" width="100%">
 						    <tbody><tr>
 						      <td align="left" style="color:#4f4f4f;font-family:Arial, sans-serif;font-size:16px;font-style:normal;font-weight:normal;line-height:20px;padding:20px;text-align:center;vertical-align:top;" width="100%">
-						        <span style="color:#DD0000;"><span style="display: inline-block; font-family: Arial, sans-serif; font-size: 18px; font-style: normal; font-weight: ; padding: 5px 0px 10px;">Ihr Voucher-Code: </span></span> 
+						        <span style="color:#DD0000;"><span style="display: inline-block; font-family: Arial, sans-serif; font-size: 18px; font-style: normal; font-weight: bold ; padding: 5px 0px 10px;">Ihr Gutschein Code lautet</span></span> 
 						        <!-- ============================== -->
 						        <!-- CTA BTN -->
 						        <!-- ============================== -->
@@ -94,7 +94,7 @@ $(document).ready(function(){
 <div class="code_none" id="cb-block-code"><table align="center" border="0" cellpadding="0" cellspacing="0" class="tmp--container" style="background-color:#ffffff;" width="100%">
 						    <tbody><tr>
 						      <td align="left" style="color:#4f4f4f;font-family:Arial, sans-serif;font-size:16px;font-style:normal;font-weight:normal;line-height:20px;padding:20px;text-align:center;vertical-align:top;" width="100%">
-						        <span style="color:#DD0000;"><span style="display: inline-block; font-family: Arial, sans-serif; font-size: 18px; font-style: normal; font-weight: ; padding: 5px 0px 10px;">Ihr Voucher-Code: </span></span> 
+						        <span style="color:#DD0000;"><span style="display: inline-block; font-family: Arial, sans-serif; font-size: 18px; font-style: normal; font-weight: bold; padding: 5px 0px 10px;">Ihr Gutschein Code lautet: </span></span> 
 						        <!-- ============================== -->
 						        <!-- CTA BTN -->
 						        <!-- ============================== -->
