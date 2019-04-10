@@ -93,6 +93,7 @@ $(document).ready(function(){
 						      </td>
 						    </tr>
 						  </table>`
+				sdk.setContent(output);
     	}
     }
 });
