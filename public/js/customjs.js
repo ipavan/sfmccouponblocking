@@ -26,7 +26,7 @@ $(document).ready(function(){
 								  <div class="slds-form-element__control">
 								    <div class="slds-select_container">
 								      <select class="slds-select" id="dename">
-								        <option value="Unselected">Select a Data Extension</option>`;
+								        <option value="Unselected">Bitte Gutschein auswählen</option>`;
 
 	        res.forEach(function (item) {
 					    output+=`<option value="${item}">${item}</option>`
