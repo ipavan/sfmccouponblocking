@@ -82,6 +82,7 @@ app.get('/transformXML', (req, res) => {
 	parseString(xml, function (err, result) {
 	    console.log(result);
 	    console.log(JSON.stringify(result));
+	    console.log(result['soap:Envelope']['$']['soap:Body']);
 	});
 
 	res.send('200');
