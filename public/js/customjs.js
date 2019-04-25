@@ -86,8 +86,7 @@ $(document).ready(function(){
 		
 		if $("#radio-11").is(":checked") {
 			let radioflag = "1";
-		}
-		else {
+		} else {
 			let radioflag = "0";
 		}
 		
