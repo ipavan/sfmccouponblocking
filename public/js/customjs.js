@@ -117,7 +117,6 @@ $(document).ready(function(){
 						      </td>
 						    </tr>
 						  </tbody></table></div>
-						  <div id="content" textcolor="${textColor}" linkcolor="${linkColor}">`
 						  
 
 				sdk.setContent(output);
