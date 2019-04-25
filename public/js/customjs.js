@@ -15,12 +15,18 @@ $(document).ready(function(){
         if (buttonColor) {
             $("#button-color").val(buttonColor);
         }
-		var sel = dom_nodes.find('#contentvoucher').attr('namede');
+		var sel = dom_nodes.find('#contentvoucher').attr('dename');
         if (sel) {
             $("#dename").val(sel);
         }
-		
-		namede
+		var newvoucherflag = dom_nodes.find('#contentvoucher').attr('newvoucherflag');
+        if (newvoucherflag = 1)  {
+            $("#radio-11").prop("checked, true);
+			$("#radio-12").prop("checked, false);
+		} else {
+			$("#radio-11").prop("checked, false);
+			$("#radio-12").prop("checked, true);
+        }
     });
 	
 	
@@ -111,7 +117,9 @@ $(document).ready(function(){
 						          </tr>
 						        </tbody></table>
 						      </td>
-						  </tr></tbody></table></div>`
+						  </tr></tbody></table>
+						  <div id="contentvoucher" textcolor="${textColor}" buttoncolor="${buttonColor}" dename="${sel} newvoucherflag="0"</div>
+						  </div>`
     		sdk.setContent(output);
     	} else {
     		let output = `<style type="text/css">.amp {font-size:1px;color:#f2f2f2;}</style>
@@ -139,7 +147,7 @@ $(document).ready(function(){
 						      </td>
 						    </tr>
 						  </tbody></table>
-						  <div id="contentvoucher" textcolor="${textColor}" buttoncolor="${buttonColor}" namede="${sel}"</div>
+						  <div id="contentvoucher" textcolor="${textColor}" buttoncolor="${buttonColor}" dename="${sel} newvoucherflag="1"</div>
 						  </div>`
 						  
 
