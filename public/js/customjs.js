@@ -114,7 +114,7 @@ $(document).ready(function(){
 						            </td>
 						          </tr>
 								  <tr>
-									<div id="content" style="font-size=1px" textcolor="${textColor}" buttoncolor="${buttonColor}"</div>
+									<td id="content" style="font-size=1px" textcolor="${textColor}" buttoncolor="${buttonColor}"</td>
 								  </tr>
 						        </tbody></table>
 						      </td>
