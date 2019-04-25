@@ -18,11 +18,11 @@ $(document).ready(function(){
 
 		var newvoucherflag = dom_nodes.find('#contentvoucher').attr('newvoucherflag');
         if (newvoucherflag = 1)  {
-            $("#radio-11").prop("checked, true);
-			$("#radio-12").prop("checked, false);
+            $("#radio-11").prop("checked", true);
+			$("#radio-12").prop("checked", false);
 		} else {
-			$("#radio-11").prop("checked, false);
-			$("#radio-12").prop("checked, true);
+			$("#radio-11").prop("checked", false);
+			$("#radio-12").prop("checked", true);
         }
 				//var sel = dom_nodes.find('#contentvoucher').attr('dename');
         //if (sel) {
