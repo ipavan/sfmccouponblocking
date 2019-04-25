@@ -15,10 +15,7 @@ $(document).ready(function(){
         if (buttonColor) {
             $("#button-color").val(buttonColor);
         }
-		var sel = dom_nodes.find('#contentvoucher').attr('dename');
-        if (sel) {
-            $("#dename").val(sel);
-        }
+
 		var newvoucherflag = dom_nodes.find('#contentvoucher').attr('newvoucherflag');
         if (newvoucherflag = 1)  {
             $("#radio-11").prop("checked, true);
@@ -27,6 +24,10 @@ $(document).ready(function(){
 			$("#radio-11").prop("checked, false);
 			$("#radio-12").prop("checked, true);
         }
+				//var sel = dom_nodes.find('#contentvoucher').attr('dename');
+        //if (sel) {
+        //    $("#dename").val(sel);
+        //}
     });
 	
 	
