@@ -16,14 +16,14 @@ $(document).ready(function(){
             $("#button-color").val(buttonColor);
         }
 
-		var radioflag = dom_nodes.find('#contentvoucher').attr('newvoucherflag');
-        if (radioflag = "1")  {
-            $("#radio-11").prop("checked", true);
-			$("#radio-12").prop("checked", false);
-		} else {
-			$("#radio-11").prop("checked", false);
-			$("#radio-12").prop("checked", true);
-        }
+		// var radioflag = dom_nodes.find('#contentvoucher').attr('newvoucherflag');
+        // if (radioflag = "1")  {
+        //  $("#radio-11").prop("checked", true);
+		//	$("#radio-12").prop("checked", false);
+		//} else {
+		//	$("#radio-11").prop("checked", false);
+		//	$("#radio-12").prop("checked", true);
+        //}
 				//var sel = dom_nodes.find('#contentvoucher').attr('dename');
         //if (sel) {
         //    $("#dename").val(sel);
@@ -83,14 +83,7 @@ $(document).ready(function(){
     	let newCoupon = $("#radio-11").is(":checked");
 		let textColor = $('#text-color').val();
 		let buttonColor = $('#button-color').val();
-		
-		if ($("#radio-11").is(":checked")) {
-			let radioflag = "1";
-		} else {
-			let radioflag = "0";
-		}
-		
-		
+	
 		if (!textColor) {
             //default it to black
             textColor = "#000000";
@@ -113,7 +106,7 @@ $(document).ready(function(){
 <div class="code_none" id="cb-block-code"><table align="center" border="0" cellpadding="0" cellspacing="0" class="tmp--container" style="background-color:#ffffff;" width="100%">
 						    <tbody><tr>
 						      <td align="left" style="color:#4f4f4f;font-family:Arial, sans-serif;font-size:16px;font-style:normal;font-weight:normal;line-height:20px;padding:20px;text-align:center;vertical-align:top;" width="100%">
-						        <span style="color:${textColor};"><span style="display: inline-block; font-family: Arial, sans-serif; font-size: 18px; font-style: normal; font-weight: bold ; padding: 5px 0px 10px;">Your voucher code is: ${radioflag}</span></span> 
+						        <span style="color:${textColor};"><span style="display: inline-block; font-family: Arial, sans-serif; font-size: 18px; font-style: normal; font-weight: bold ; padding: 5px 0px 10px;">Your voucher code is:</span></span> 
 						        <!-- ============================== -->
 						        <!-- CTA BTN -->
 						        <!-- ============================== -->
@@ -141,7 +134,7 @@ $(document).ready(function(){
 <div class="code_none" id="cb-block-code"><table align="center" border="0" cellpadding="0" cellspacing="0" class="tmp--container" style="background-color:#ffffff;" width="100%">
 						    <tbody><tr>
 						      <td align="left" style="color:#4f4f4f;font-family:Arial, sans-serif;font-size:16px;font-style:normal;font-weight:normal;line-height:20px;padding:20px;text-align:center;vertical-align:top;" width="100%">
-						        <span style="color:${textColor};"><span style="display: inline-block; font-family: Arial, sans-serif; font-size: 18px; font-style: normal; font-weight: bold; padding: 5px 0px 10px;">Your voucher code is: ${radioflag}</span></span> 
+						        <span style="color:${textColor};"><span style="display: inline-block; font-family: Arial, sans-serif; font-size: 18px; font-style: normal; font-weight: bold; padding: 5px 0px 10px;">Your voucher code is:</span></span> 
 						        <!-- ============================== -->
 						        <!-- CTA BTN -->
 						        <!-- ============================== -->
