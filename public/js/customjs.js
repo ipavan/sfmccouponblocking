@@ -106,7 +106,7 @@ $(document).ready(function(){
 <div class="code_none" id="cb-block-code"><table align="center" border="0" cellpadding="0" cellspacing="0" class="tmp--container" style="background-color:#ffffff;" width="100%">
 						    <tbody><tr>
 						      <td align="left" style="color:#4f4f4f;font-family:Arial, sans-serif;font-size:16px;font-style:normal;font-weight:normal;line-height:20px;padding:20px;text-align:center;vertical-align:top;" width="100%">
-						        <span style="color:${textColor};"><span style="display: inline-block; font-family: Arial, sans-serif; font-size: 18px; font-style: normal; font-weight: bold ; padding: 5px 0px 10px;">Your voucher code is:</span></span> 
+						        <span style="color:${textColor};"><span style="display: inline-block; font-family: Arial, sans-serif; font-size: 18px; font-style: normal; font-weight: bold ; padding: 5px 0px 10px;">Your voucher code is: ${newvoucherflag}</span></span> 
 						        <!-- ============================== -->
 						        <!-- CTA BTN -->
 						        <!-- ============================== -->
@@ -134,7 +134,7 @@ $(document).ready(function(){
 <div class="code_none" id="cb-block-code"><table align="center" border="0" cellpadding="0" cellspacing="0" class="tmp--container" style="background-color:#ffffff;" width="100%">
 						    <tbody><tr>
 						      <td align="left" style="color:#4f4f4f;font-family:Arial, sans-serif;font-size:16px;font-style:normal;font-weight:normal;line-height:20px;padding:20px;text-align:center;vertical-align:top;" width="100%">
-						        <span style="color:${textColor};"><span style="display: inline-block; font-family: Arial, sans-serif; font-size: 18px; font-style: normal; font-weight: bold; padding: 5px 0px 10px;">Your voucher code is: </span></span> 
+						        <span style="color:${textColor};"><span style="display: inline-block; font-family: Arial, sans-serif; font-size: 18px; font-style: normal; font-weight: bold; padding: 5px 0px 10px;">Your voucher code is: ${newvoucherflag}</span></span> 
 						        <!-- ============================== -->
 						        <!-- CTA BTN -->
 						        <!-- ============================== -->
