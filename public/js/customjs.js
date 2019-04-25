@@ -2,6 +2,21 @@ $(document).ready(function(){
 
 	var sdk = new window.sfdc.BlockSDK();
 	
+	
+	sdk.getContent(function (contentvoucher) {
+        var dom_nodes = $($.parseHTML(contentvoucher));
+        
+		var textColor = dom_nodes.find('#contentvoucher').attr('textcolor');
+        if (textColor) {
+            $("#text-color").val(textColor);
+        }
+		var linkColor = dom_nodes.find('#contentvoucher').attr('buttoncolor');
+        if (buttonColor) {
+            $("#button-color").val(buttonColor);
+        }
+    });
+	
+	
 	updatePicklistOptions();
 
 	function updatePicklistOptions() {
@@ -117,7 +132,7 @@ $(document).ready(function(){
 						      </td>
 						    </tr>
 						  </tbody></table>
-						  <div id="content" style="font-size=1px" textcolor="${textColor}" buttoncolor="${buttonColor}"</div>
+						  <div id="contentvoucher" textcolor="${textColor}" buttoncolor="${buttonColor}"</div>
 						  </div>`
 						  
 
