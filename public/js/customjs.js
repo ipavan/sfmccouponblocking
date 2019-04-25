@@ -61,7 +61,7 @@ $(document).ready(function(){
 <span class="amp">%%[</span>
 <style type="text/css">.code_none{display:none;}</style>
 <div id="sb-box" align="center" style="margin: 0px auto; padding: 40px 0px; border: 1px dashed rgb(255, 255, 255); max-width: 600px; background: linear-gradient(rgb(225, 0, 0), rgb(255, 40, 40));">
-  <div style="font-family:'Salesforce Sans', Helvetica, Arial, sans-serif;font-weight: 300;font-size: 35px;line-height: 40px;text-align:center; color: #ffffff;" id="cb-block-name">Gutschein Block</div>
+  <div style="font-family:'Salesforce Sans', Helvetica, Arial, sans-serif;font-weight: 300;font-size: 35px;line-height: 40px;text-align:center; color: #ffffff;" id="cb-block-name">Voucher Block: ${sel}</div>
   <div style="color:#f2f2f2;font-family:'Salesforce Sans', Helvetica, Arial, sans-serif;font-weight: 200;font-size: 24px;line-height: 20px;padding:10px 0px 0px;text-align:center;">Smart Block</div>
 </div>
 <span class="amp">]%%</span>
@@ -87,7 +87,7 @@ $(document).ready(function(){
 <span class="amp">%%[</span>
 <style type="text/css">.code_none{display:none;}</style>
 <div id="sb-box" align="center" style="margin: 0px auto; padding: 40px 0px; border: 1px dashed rgb(255, 255, 255); max-width: 600px; background: linear-gradient(rgb(225, 0, 0), rgb(255, 40, 40));">
-  <div style="font-family:'Salesforce Sans', Helvetica, Arial, sans-serif;font-weight: 300;font-size: 35px;line-height: 40px;text-align:center; color: #ffffff;" id="cb-block-name">Gutschein Block</div>
+		<div style="font-family:'Salesforce Sans', Helvetica, Arial, sans-serif;font-weight: 300;font-size: 35px;line-height: 40px;text-align:center; color: #ffffff;" id="cb-block-name">Voucher Block: ${sel}</div>
   <div style="color:#f2f2f2;font-family:'Salesforce Sans', Helvetica, Arial, sans-serif;font-weight: 200;font-size: 24px;line-height: 20px;padding:10px 0px 0px;text-align:center;">Smart Block</div>
 </div>
 <span class="amp">]%%</span>
