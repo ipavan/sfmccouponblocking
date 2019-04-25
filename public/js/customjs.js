@@ -2,6 +2,7 @@ $(document).ready(function(){
 
 	var sdk = new window.sfdc.BlockSDK();
 	
+	updatePicklistOptions();
 	
 	sdk.getContent(function (contentvoucher) {
         var dom_nodes = $($.parseHTML(contentvoucher));
@@ -23,7 +24,7 @@ $(document).ready(function(){
     });
 	
 	
-	updatePicklistOptions();
+	
 
 	function updatePicklistOptions() {
 		$('#options').hide();
