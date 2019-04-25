@@ -1,6 +1,25 @@
 $(document).ready(function(){
 
 	var sdk = new window.sfdc.BlockSDK();
+	
+	sdk.getContent(function (content) {
+        var dom_nodes = $($.parseHTML(content));
+
+		var textColor = dom_nodes.find('#content').attr('textcolor');
+        if (textColor) {
+            $("#text-color").val(textColor);
+        }
+		var buttonColor = dom_nodes.find('#content').attr('buttoncolor');
+        if (buttonColor) {
+            $("#button-color").val(buttonColor);
+        }
+        //var image = dom_nodes.find('#content').attr('imagechecked');
+        // if (image) {
+        //     document.getElementById('image-checkbox').checked = true;
+        // } else {
+        //     document.getElementById('image-checkbox').checked = false;
+        // }
+    });
 
 	updatePicklistOptions();
 
@@ -54,9 +73,11 @@ $(document).ready(function(){
     	let newCoupon = $("#radio-11").is(":checked");
 		let textColor = $('#text-color').val();
 		let buttonColor = $('#button-color').val();
-
+		
+		let output = `<div><div id="content" textcolor="${textColor}" brandcolor="${brandColor}">`;
+		
     	if (!newCoupon) {
-    		let output = `<style type="text/css">.amp {font-size:1px;color:#f2f2f2;}</style>
+    		let output += `<style type="text/css">.amp {font-size:1px;color:#f2f2f2;}</style>
 <span class="amp">%%[</span>
 <style type="text/css">.code_none{display:none;}</style>
 <div id="sb-box" align="center" style="margin: 0px auto; padding: 40px 0px; border: 1px dashed rgb(255, 255, 255); max-width: 600px; background: linear-gradient(rgb(225, 0, 0), rgb(255, 40, 40));">
@@ -82,7 +103,7 @@ $(document).ready(function(){
 						  </tr></tbody></table></div>`
     		sdk.setContent(output);
     	} else {
-    		let output = `<style type="text/css">.amp {font-size:1px;color:#f2f2f2;}</style>
+    		let output += `<style type="text/css">.amp {font-size:1px;color:#f2f2f2;}</style>
 <span class="amp">%%[</span>
 <style type="text/css">.code_none{display:none;}</style>
 <div id="sb-box" align="center" style="margin: 0px auto; padding: 40px 0px; border: 1px dashed rgb(255, 255, 255); max-width: 600px; background: linear-gradient(rgb(225, 0, 0), rgb(255, 40, 40));">
