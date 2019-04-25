@@ -113,13 +113,12 @@ $(document).ready(function(){
 						              <span style="font-family:courier new,courier,monospace;"><a href="" style="border-radius:3px;background-color:${buttonColor};border-top:12px solid ${buttonColor};border-bottom:12px solid ${buttonColor};border-right:18px solid ${buttonColor};border-left:18px solid ${buttonColor};color:#ffffff;display:inline-block;font-family:Arial, sans-serif;font-size:16px;font-style:normal;font-weight:normal;line-height:16px;text-align:center;text-decoration:none;" target="_blank"><b>%%[ SET @CouponRow = ClaimRow('${sel}', 'IsClaimed', 'EmailAddress', emailaddr, 'Validity', DateAdd(NOW(), '31', 'D')) IF EMPTY(@CouponRow) THEN SET @Coupon = 'No coupons available' ELSE SET @Coupon = FIELD(@CouponRow, 'CouponCode') ENDIF ]%% %%=v(@Coupon)=%%</b></a></span>
 						            </td>
 						          </tr>
-								  <tr>
-									<td id="content" style="font-size=1px" textcolor="${textColor}" buttoncolor="${buttonColor}"</td>
-								  </tr>
 						        </tbody></table>
 						      </td>
 						    </tr>
-						  </tbody></table></div>`
+						  </tbody></table>
+						  <div id="content" style="font-size=1px" textcolor="${textColor}" buttoncolor="${buttonColor}"</div>
+						  </div>`
 						  
 
 				sdk.setContent(output);
