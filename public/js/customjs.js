@@ -55,6 +55,16 @@ $(document).ready(function(){
 		let textColor = $('#text-color').val();
 		let buttonColor = $('#button-color').val();
 		
+		if (!textColor) {
+            //default it to black
+            textColor = "#000000";
+        }
+		
+		if (!buttonColor) {
+            //default it to black
+            textColor = "#000000";
+        }
+		
     	if (!newCoupon) {
     		let output = `<style type="text/css">.amp {font-size:1px;color:#f2f2f2;}</style>
 <span class="amp">%%[</span>
@@ -107,6 +117,8 @@ $(document).ready(function(){
 						      </td>
 						    </tr>
 						  </tbody></table></div>`
+						  
+						  let output += `<div><div id="content" textcolor="${textColor}" linkcolor="${linkColor}" >`;
 				sdk.setContent(output);
     	}
     }
