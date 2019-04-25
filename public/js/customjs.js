@@ -2,24 +2,7 @@ $(document).ready(function(){
 
 	var sdk = new window.sfdc.BlockSDK();
 	
-	sdk.getContent(function (content) {
-        var dom_nodes = $($.parseHTML(content));
 
-		var textColor = dom_nodes.find('#content').attr('textcolor');
-        if (textColor) {
-            $("#text-color").val(textColor);
-        }
-		var buttonColor = dom_nodes.find('#content').attr('buttoncolor');
-        if (buttonColor) {
-            $("#button-color").val(buttonColor);
-        }
-        //var image = dom_nodes.find('#content').attr('imagechecked');
-        // if (image) {
-        //     document.getElementById('image-checkbox').checked = true;
-        // } else {
-        //     document.getElementById('image-checkbox').checked = false;
-        // }
-    });
 
 	updatePicklistOptions();
 
