@@ -84,7 +84,7 @@ $(document).ready(function(){
 		let textColor = $('#text-color').val();
 		let buttonColor = $('#button-color').val();
 		
-		if $("#radio-11").is(":checked") {
+		if ($("#radio-11").is(":checked")) {
 			let radioflag = "1";
 		} else {
 			let radioflag = "0";
