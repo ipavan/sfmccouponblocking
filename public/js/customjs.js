@@ -36,7 +36,7 @@ $(document).ready(function(){
 	function updatePicklistOptions() {
 		$('#options').hide();
 		$('#updateButton').hide();
-		// $('#radiobuttons').hide();
+		$('#radiobuttons').hide();
         $.ajax({
          type: "GET",
          url: "/getDataExtensions",
@@ -46,7 +46,7 @@ $(document).ready(function(){
             $('#spinna').hide();
             $('#options').show();
             $('#updateButton').show();
-            // $('#radiobuttons').show();
+            $('#radiobuttons').show();
 
              
             let output = `
