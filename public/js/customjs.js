@@ -116,7 +116,7 @@ $(document).ready(function(){
 						        </tbody></table>
 						      </td>
 						    </tr>
-						  </tbody></table></div>
+						  </tbody></table></div>`
 						  
 
 				sdk.setContent(output);
