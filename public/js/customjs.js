@@ -10,10 +10,16 @@ $(document).ready(function(){
         if (textColor) {
             $("#text-color").val(textColor);
         }
-		var linkColor = dom_nodes.find('#contentvoucher').attr('buttoncolor');
+		var buttonColor = dom_nodes.find('#contentvoucher').attr('buttoncolor');
         if (buttonColor) {
             $("#button-color").val(buttonColor);
         }
+		var sel = dom_nodes.find('#contentvoucher').attr('namede');
+        if (sel) {
+            $("#dename").val(sel);
+        }
+		
+		namede
     });
 	
 	
@@ -77,7 +83,7 @@ $(document).ready(function(){
 		
 		if (!buttonColor) {
             //default it to black
-            textColor = "#000000";
+            buttonColor = "#000000";
         }
 		
     	if (!newCoupon) {
@@ -132,7 +138,7 @@ $(document).ready(function(){
 						      </td>
 						    </tr>
 						  </tbody></table>
-						  <div id="contentvoucher" textcolor="${textColor}" buttoncolor="${buttonColor}"</div>
+						  <div id="contentvoucher" textcolor="${textColor}" buttoncolor="${buttonColor}" namede="${sel}"</div>
 						  </div>`
 						  
 
