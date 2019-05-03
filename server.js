@@ -15,12 +15,18 @@ app.listen(port);
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
 
+
+let vclientid = $('#textbox-clientid').val();
+let vclientsecret = $('#textbox-clientsecret').val();
+let vapiuri = $('#textbox-apiuri').val();
+
+
 const options = {
 	auth: {
-		clientId: 'nwbiy6rkgktykoquuixgjhdg',
-		clientSecret: '1GFFAQ4jNLqo5WTJaiCkqlaJ'
+		clientId: vclientid,
+		clientSecret: vclientsecret
 	},
-	origin: 'https://mct181ddvnpf05z2r5mcclnpt34q.rest.marketingcloudapis.com'
+	origin: vapiuri + '.rest.marketingcloudapis.com'
 };
 
 const RestClient = new FuelRest(options);
@@ -28,11 +34,11 @@ const RestClient = new FuelRest(options);
 app.get('/getDataExtensions', (req, res) => {
 	var options = {
             method: 'POST',
-            uri: 'https://mct181ddvnpf05z2r5mcclnpt34q.auth.marketingcloudapis.com/v2/token',
+            uri: vapiuri + '.auth.marketingcloudapis.com/v2/token',
             body: {
               'grant_type': 'client_credentials',
-              'client_id': 'nwbiy6rkgktykoquuixgjhdg',
-              'client_secret':'1GFFAQ4jNLqo5WTJaiCkqlaJ'
+              'client_id': vclientid,
+              'client_secret':vclientsecret
             },
             json: true
         }
@@ -47,7 +53,7 @@ app.get('/getDataExtensions', (req, res) => {
             //https://mct181ddvnpf05z2r5mcclnpt34q.soap.marketingcloudapis.com/etframework.wsdl
             var soapOptions = {
 				    method: 'POST',
-				    uri: 'https://mct181ddvnpf05z2r5mcclnpt34q.soap.marketingcloudapis.com/Service.asmx',
+				    uri: vapiuri + '.soap.marketingcloudapis.com/Service.asmx',
 				    headers: {
 				        'Content-Type': 'text/xml'
 				    },
