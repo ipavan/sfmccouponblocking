@@ -2,8 +2,6 @@ $(document).ready(function(){
 
 	var sdk = new window.sfdc.BlockSDK();
 	
-	updatePicklistOptions();
-	
 	sdk.getContent(function (contentvoucher) {
         var dom_nodes = $($.parseHTML(contentvoucher));
         
@@ -72,6 +70,11 @@ $(document).ready(function(){
         	}
         });
     }
+
+    $("#loadVouchers").click(function(){
+        updatePicklistOptions();
+    });
+
 
     $("#updateCoupon").click(function(){
         setSDKData();
