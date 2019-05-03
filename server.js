@@ -21,7 +21,7 @@ const options = {
 		clientId: 'nwbiy6rkgktykoquuixgjhdg',
 		clientSecret: '1GFFAQ4jNLqo5WTJaiCkqlaJ'
 	},
-	origin: vapiuri + 'https://mct181ddvnpf05z2r5mcclnpt34q.rest.marketingcloudapis.com'
+	origin: 'https://mct181ddvnpf05z2r5mcclnpt34q.rest.marketingcloudapis.com'
 };
 
 const RestClient = new FuelRest(options);
@@ -29,7 +29,7 @@ const RestClient = new FuelRest(options);
 app.get('/getDataExtensions', (req, res) => {
 	var options = {
             method: 'POST',
-            uri: vapiuri + 'https://mct181ddvnpf05z2r5mcclnpt34q.auth.marketingcloudapis.com/v2/token',
+            uri:  'https://mct181ddvnpf05z2r5mcclnpt34q.auth.marketingcloudapis.com/v2/token',
             body: {
               'grant_type': 'client_credentials',
               'client_id': 'nwbiy6rkgktykoquuixgjhdg',
@@ -48,7 +48,7 @@ app.get('/getDataExtensions', (req, res) => {
             //https://mct181ddvnpf05z2r5mcclnpt34q.soap.marketingcloudapis.com/etframework.wsdl
             var soapOptions = {
 				    method: 'POST',
-				    uri: vapiuri + 'https://mct181ddvnpf05z2r5mcclnpt34q.soap.marketingcloudapis.com/Service.asmx',
+				    uri: 'https://mct181ddvnpf05z2r5mcclnpt34q.soap.marketingcloudapis.com/Service.asmx',
 				    headers: {
 				        'Content-Type': 'text/xml'
 				    },
