@@ -27,12 +27,13 @@ const options = {
 const RestClient = new FuelRest(options);
 
 app.get('/getDataExtensions', (req, res) => {
+	let vclientid = $('#textbox-clientid').val();
 	var options = {
             method: 'POST',
             uri:  'https://mct181ddvnpf05z2r5mcclnpt34q.auth.marketingcloudapis.com/v2/token',
             body: {
               'grant_type': 'client_credentials',
-              'client_id': 'nwbiy6rkgktykoquuixgjhdg',
+              'client_id': vclientid,
               'client_secret': '1GFFAQ4jNLqo5WTJaiCkqlaJ'
             },
             json: true
