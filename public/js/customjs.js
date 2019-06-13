@@ -28,8 +28,7 @@ $(document).ready(function(){
         //}
     });
 	
-	
-	
+	updatePicklistOptions();
 
 	function updatePicklistOptions() {
 		$('#options').hide();
@@ -70,10 +69,6 @@ $(document).ready(function(){
         	}
         });
     }
-
-    $("#loadVouchers").click(function(){
-        updatePicklistOptions();
-    });
 
 
     $("#updateCoupon").click(function(){
