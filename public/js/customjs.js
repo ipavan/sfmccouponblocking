@@ -34,6 +34,8 @@ $(document).ready(function(){
 		$('#options').hide();
 		$('#updateButton').hide();
 		$('#radiobuttons').hide();
+		$('#text-color').hide();
+		$('#button-color').hide();
         $.ajax({
          type: "GET",
          url: "/getDataExtensions",
