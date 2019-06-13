@@ -39,6 +39,8 @@ app.get('/getDataExtensions', (req, res) => {
             json: true
         }
 
+    console.log(options);
+
     request(options)
     	.then(function(resp) {
     		const accessToken = resp['access_token'];
