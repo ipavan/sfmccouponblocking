@@ -27,7 +27,6 @@ const options = {
 const RestClient = new FuelRest(options);
 
 app.get('/getDataExtensions', (req, res) => {
-	let vclientid = $('#textbox-clientid').val();
 	var options = {
             method: 'POST',
             uri:  `https://${process.env.ENDPOINT}.auth.marketingcloudapis.com/v2/token`,
@@ -48,7 +47,6 @@ app.get('/getDataExtensions', (req, res) => {
 
             const xml = `<?xml version="1.0" encoding="UTF-8"?><s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:u="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><s:Header><a:Action s:mustUnderstand="1">Retrieve</a:Action><a:MessageID>urn:uuid:7e0cca04-57bd-4481-864c-6ea8039d2ea0</a:MessageID><a:ReplyTo><a:Address>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</a:Address></a:ReplyTo><a:To s:mustUnderstand="1">https://${process.env.ENDPOINT}.soap.marketingcloudapis.com/Service.asmx</a:To><fueloauth xmlns="http://exacttarget.com">${accessToken}</fueloauth></s:Header><s:Body xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><RetrieveRequestMsg xmlns="http://exacttarget.com/wsdl/partnerAPI"><RetrieveRequest><ObjectType>DataExtension</ObjectType><Properties>Name</Properties><Filter xsi:type="SimpleFilterPart"><Property>CategoryID</Property><SimpleOperator>equals</SimpleOperator><Value>${process.env.DE_ID}</Value> </Filter></RetrieveRequest></RetrieveRequestMsg></s:Body></s:Envelope>`
 
-            //https://mct181ddvnpf05z2r5mcclnpt34q.soap.marketingcloudapis.com/etframework.wsdl
             var soapOptions = {
 				    method: 'POST',
 				    uri: `https://${process.env.ENDPOINT}.soap.marketingcloudapis.com/Service.asmx`,
