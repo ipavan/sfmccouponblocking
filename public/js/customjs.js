@@ -46,6 +46,8 @@ $(document).ready(function(){
             $('#options').show();
             $('#updateButton').show();
             $('#radiobuttons').show();
+            $('#text-color').show();
+			$('#button-color').show();
 
              
             let output = `
