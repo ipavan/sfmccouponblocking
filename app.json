@@ -1,0 +1,21 @@
+{
+  "name": "CouponBlocking Content Block",
+  "description": "Custom Content Block for Couponing",
+  "repository": "https://github.com/ipavan/sfmccouponblocking",
+  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "keywords": ["sfmc"],
+  "env": {
+    "CLIENTID": {
+      "description": "SFMC OAuth2 Client ID"
+    },
+    "CLIENT_SECRET": {
+      "description": "SFMC OAuth2 Client Secret"
+    },
+    "ENDPOINT": {
+      "description": "SFMC Tenant Specific Endpoint"
+    },
+    "DE_ID": {
+      "description": "Voucher DE ID"
+    }
+  }
+}
