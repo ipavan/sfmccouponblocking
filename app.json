@@ -2,7 +2,7 @@
   "name": "CouponBlocking Content Block",
   "description": "Custom Content Block for Couponing",
   "repository": "https://github.com/ipavan/sfmccouponblocking",
-  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "logo": "https://github.com/ipavan/sfmccouponblocking/blob/master/public/icon.png",
   "keywords": ["sfmc"],
   "env": {
     "CLIENTID": {
