@@ -1,6 +1,5 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-const FuelRest = require('fuel-rest');
 const request = require('request-promise');
 var parseString = require('xml2js').parseString;
 var app = express();
@@ -23,8 +22,6 @@ const options = {
 	},
 	origin: `https://${process.env.ENDPOINT}.rest.marketingcloudapis.com`
 };
-
-const RestClient = new FuelRest(options);
 
 app.get('/getDataExtensions', (req, res) => {
 	var options = {
