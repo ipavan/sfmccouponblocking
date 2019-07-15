@@ -15,7 +15,7 @@ app.listen(port);
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
 
-const RestClient = new FuelRest(options);
+
 
 const options = {
 	auth: {
@@ -24,6 +24,8 @@ const options = {
 	},
 	origin: `https://${process.env.ENDPOINT}.rest.marketingcloudapis.com`
 };
+
+const RestClient = new FuelRest(options);
 
 app.get('/getDataExtensions', (req, res) => {
 	var options = {
