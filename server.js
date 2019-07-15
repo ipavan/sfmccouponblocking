@@ -1,6 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 const request = require('request-promise');
+const FuelRest = require('fuel-rest');
 var parseString = require('xml2js').parseString;
 var app = express();
 var port = process.env.PORT || 8080;
@@ -14,6 +15,7 @@ app.listen(port);
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
 
+const RestClient = new FuelRest(options);
 
 const options = {
 	auth: {
