@@ -50,22 +50,26 @@ $(document).ready(function(){
 		let lang = l.toLowerCase();
 		if (lang == 'english') {
 			languageData = {
-				voucherSelection: 'Voucher selection'
+				voucherSelection: 'Voucher selection',
+				pleaseSelectVoucher: 'Please select voucher'
 			}
 		}
 		if (lang == 'french') {
 			languageData = {
-				voucherSelection; 'Sélection des bons'
+				voucherSelection: 'Sélection des bons',
+				pleaseSelectVoucher: 'Veuillez sélectionner le bon'
 			}
 		}
 		if (lang == 'german') {
 			languageData = {
-				voucherSelection; 'Gutscheinauswahl'
+				voucherSelection: 'Gutscheinauswahl',
+				pleaseSelectVoucher: 'Bitte Gutschein auswählen'
 			}
 		}
 		if (lang == 'spanish') {
 			languageData = {
-				voucherSelection; 'Selección de cupones'
+				voucherSelection: 'Selección de cupones',
+				pleaseSelectVoucher: 'Por favor seleccione el cupón'
 			}
 		}
 	}
@@ -96,7 +100,7 @@ $(document).ready(function(){
 								  <div class="slds-form-element__control">
 								    <div class="slds-select_container">
 								      <select class="slds-select" id="dename">
-								        <option value="Unselected">Please select voucher</option>`;
+								        <option value="Unselected">${languageData.pleaseSelectVoucher}</option>`;
 
 	        res.forEach(function (item) {
 					    output+=`<option value="${item}">${item}</option>`
