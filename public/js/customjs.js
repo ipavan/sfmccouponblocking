@@ -38,7 +38,7 @@ $(document).ready(function(){
 		$('#button-color').hide();
         $.ajax({
          type: "GET",
-         url: "/getDataExtensions",
+         url: "/getDEs",
          success: function(res) {
             console.log('Success');
             console.log(res);
