@@ -110,9 +110,10 @@ app.get('/getDEs', (req, res) => {
 			global.marketingCloudAccessToken.isExpired = false;
 			console.log(global.marketingCloudAccessToken);
 			//get journeys
-			getListOfDataExtensions(global.marketingCloudAccessToken.access_token).then((data) => {
-				console.log(data['body']);
-				parseString(data, function (err, result) {
+			getListOfDataExtensions(global.marketingCloudAccessToken.access_token).then((response) => {
+				console.log(response['body']);
+				parseString(response, function (err, result) {
+					console.log(result);
 				    let envelope = result['soap:Envelope']['soap:Body'][0]['RetrieveResponseMsg'][0];
 				    let results = envelope['Results'];
 				    results.forEach(function (item) {
@@ -128,9 +129,10 @@ app.get('/getDEs', (req, res) => {
 		.catch(error => console.log(error));
 	} else {
 		//get journeys
-		getListOfDataExtensions(global.marketingCloudAccessToken.access_token).then((data) => {
+		getListOfDataExtensions(global.marketingCloudAccessToken.access_token).then((response) => {
 
-			parseString(data, function (err, result) {
+			parseString(response, function (err, result) {
+				console.log(result);
 			    let envelope = result['soap:Envelope']['soap:Body'][0]['RetrieveResponseMsg'][0];
 			    let results = envelope['Results'];
 			    results.forEach(function (item) {
