@@ -1,6 +1,8 @@
 $(document).ready(function(){
 
 	var sdk = new window.sfdc.BlockSDK();
+
+	var language = 'English';
 	
 	sdk.getContent(function (contentvoucher) {
         var dom_nodes = $($.parseHTML(contentvoucher));
@@ -28,7 +30,19 @@ $(document).ready(function(){
         //}
     });
 	
+	getLanguage();
 	updatePicklistOptions();
+
+	function getLanguage() {
+		$.ajax({
+			type: "GET",
+			url: "/getLanguage",
+			success: function(res) {
+				language = res;
+				console.log(language);
+			}
+		})
+	}
 
 	function updatePicklistOptions() {
 		$('#options').hide();
