@@ -3,6 +3,8 @@ $(document).ready(function(){
 	var sdk = new window.sfdc.BlockSDK();
 
 	var language = 'English';
+
+	var languageData = {};
 	
 	sdk.getContent(function (contentvoucher) {
         var dom_nodes = $($.parseHTML(contentvoucher));
@@ -39,9 +41,33 @@ $(document).ready(function(){
 			url: "/getLanguage",
 			success: function(res) {
 				language = res;
-				console.log(language);
+				setLanguage(language);
 			}
 		})
+	}
+
+	function setLanguage(l) {
+		let lang = l.toLowerCase();
+		if (lang == 'english') {
+			languageData = {
+				voucherSelection: 'Voucher selection'
+			}
+		}
+		if (lang == 'french') {
+			languageData = {
+				voucherSelection; 'Sélection des bons'
+			}
+		}
+		if (lang == 'german') {
+			languageData = {
+				voucherSelection; 'Gutscheinauswahl'
+			}
+		}
+		if (lang == 'spanish') {
+			languageData = {
+				voucherSelection; 'Selección de cupones'
+			}
+		}
 	}
 
 	function updatePicklistOptions() {
@@ -66,7 +92,7 @@ $(document).ready(function(){
              
             let output = `
 							 	<div id="replaceable">
-								  <label class="slds-form-element__label" for="select-01">Voucher selection</label>
+								  <label class="slds-form-element__label" for="select-01">${languageData.voucherSelection}</label>
 								  <div class="slds-form-element__control">
 								    <div class="slds-select_container">
 								      <select class="slds-select" id="dename">
