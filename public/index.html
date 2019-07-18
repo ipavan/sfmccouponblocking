@@ -72,7 +72,7 @@
 		
 		<section class="slds-col slds-size_1-of-2" id="button-color">
 		 	<div class="slds-form-element">
-				<label class="slds-form-element__label slds-p-horizontal_small" for="text-input-id-button-color">Button color</label>
+				<label class="slds-form-element__label slds-p-horizontal_small" for="text-input-id-button-color" id="label-button-color">Button color</label>
 				<div class="slds-form-element__control slds-p-horizontal_small">
 					<input id="button-color" placeholder="Enter Hex Code" class="slds-input" type="text" value="" />
 				</div>
@@ -81,20 +81,20 @@
 
 	<section class="slds-col slds-size_1-of-1 slds-p-vertical_small slds-p-horizontal_small">
 	<fieldset class="slds-form-element" id="radiobuttons">
-	  <legend class="slds-form-element__legend slds-form-element__label" id="text-id-voucher-delivery">How do you want to deliver your voucher?</legend>
+	  <legend class="slds-form-element__legend slds-form-element__label" id="text-id-voucher-delivery" id="delivery-type">How do you want to deliver your voucher?</legend>
 	  <div class="slds-form-element__control">
 	    <span class="slds-radio">
 	      <input type="radio" id="radio-11" name="options" value="radio-new" />
 	      <label class="slds-radio__label" for="radio-11">
 	        <span class="slds-radio_faux"></span>
-	        <span class="slds-form-element__label">Assign <u>new</u> voucher code on resend</span>
+	        <span class="slds-form-element__label" id="new-voucher-code">Assign a <u>new</u> voucher code on resend</span>
 	      </label>
 	    </span>
 	    <span class="slds-radio">
 	      <input type="radio" id="radio-12" name="options" value="radio-same" />
 	      <label class="slds-radio__label" for="radio-12">
 	        <span class="slds-radio_faux"></span>
-	        <span class="slds-form-element__label">Use <u>same</u> voucher code on resend</span>
+	        <span class="slds-form-element__label" id="same-voucher-code">Use the <u>same</u> voucher code on resend</span>
 	      </label>
 	    </span>
 	  </div>
@@ -113,7 +113,7 @@
 	
 
 	<section class="slds-col slds-size_1-of-1 slds-p-vertical_small slds-p-horizontal_small" id="updateButton">
-		<button id="updateCoupon" class="slds-button slds-button_brand slds-button_stretch">Insert voucher</button>
+		<button id="updateCoupon" class="slds-button slds-button_brand slds-button_stretch" id="insert-voucher">Insert voucher</button>
 	</section>
 	
 

@@ -52,28 +52,48 @@ $(document).ready(function(){
 			languageData = {
 				voucherSelection: 'Voucher selection',
 				pleaseSelectVoucher: 'Please select voucher',
-				textColor: 'Text Color'
+				textColor: 'Text Color',
+				buttonColor: 'Button Color',
+				deliveryType: 'How do you want to deliver your voucher?',
+				newVoucherCode: 'Assign a <u>new</u> voucher code on resend',
+				sameVoucherCode: 'Use the <u>same</u> voucher code on resend',
+				insertVoucher: 'Insert voucher'
 			}
 		}
 		if (lang == 'french') {
 			languageData = {
 				voucherSelection: 'Sélection des bons',
 				pleaseSelectVoucher: 'Veuillez sélectionner le bon',
-				textColor: 'Couleur du texte'
+				textColor: 'Couleur du texte',
+				buttonColor: 'Couleur du bouton',
+				deliveryType: 'Comment voulez-vous livrer votre bon?',
+				newVoucherCode: 'Attribuer un <u>nouveau</u> code de bon lors du renvoi',
+				sameVoucherCode: 'Utilisez le <u>même</u> code de bon lors du renvoi',
+				insertVoucher: 'Insérer le voucher'
 			}
 		}
 		if (lang == 'german') {
 			languageData = {
 				voucherSelection: 'Gutscheinauswahl',
 				pleaseSelectVoucher: 'Bitte Gutschein auswählen',
-				textColor: 'Textfarbe'
+				textColor: 'Textfarbe',
+				buttonColor: 'Knopffarbe',
+				deliveryType: 'Wie möchten Sie Ihren Gutschein ausliefern?',
+				newVoucherCode: 'Weisen Sie beim erneuten Senden einen <u>neuen</u> Gutscheincode zu',
+				sameVoucherCode: 'Verwenden Sie denselben Gutscheincode beim erneuten Senden',
+				insertVoucher: 'Gutschein einlegen'
 			}
 		}
 		if (lang == 'spanish') {
 			languageData = {
 				voucherSelection: 'Selección de cupones',
 				pleaseSelectVoucher: 'Por favor seleccione el cupón',
-				textColor: 'Color de texto'
+				textColor: 'Color de texto',
+				buttonColor: 'Color del boton',
+				deliveryType: '¿Cómo quieres entregar tu cupón?',
+				newVoucherCode: 'Asignar un <u>nuevo</u> código de cupón al reenviar',
+				sameVoucherCode: 'Use el <u>mismo</u> código de cupón al reenviar',
+				insertVoucher: 'Inserte el cupón'
 			}
 		}
 	}
@@ -118,6 +138,11 @@ $(document).ready(function(){
 
 			$('#replaceable').replaceWith(output);
 			$('#label-text-color').text(languageData.textColor)
+			$('#label-button-color').text(languageData.buttonColor)
+			$('#delivery-type').text(languageData.deliveryType)
+			$('#new-voucher-code').text(languageData.newVoucherCode)
+			$('#same-voucher-code').text(languageData.sameVoucherCode)
+			$('#insert-voucher').text(languageData.insertVoucher)
             
         	}
         });
