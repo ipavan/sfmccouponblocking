@@ -141,8 +141,8 @@ $(document).ready(function(){
 			$('#label-button-color').text(languageData.buttonColor)
 			$('#delivery-type').text(languageData.deliveryType)
 			$('#new-voucher-code').html(languageData.newVoucherCode)
-			$('#same-voucher-code').text(languageData.sameVoucherCode)
-			$('#insert-voucher').text(languageData.insertVoucher)
+			$('#same-voucher-code').html(languageData.sameVoucherCode)
+			$('#updateCoupon').text(languageData.insertVoucher)
             
         	}
         });
