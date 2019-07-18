@@ -51,25 +51,29 @@ $(document).ready(function(){
 		if (lang == 'english') {
 			languageData = {
 				voucherSelection: 'Voucher selection',
-				pleaseSelectVoucher: 'Please select voucher'
+				pleaseSelectVoucher: 'Please select voucher',
+				textColor: 'Text Color'
 			}
 		}
 		if (lang == 'french') {
 			languageData = {
 				voucherSelection: 'Sélection des bons',
-				pleaseSelectVoucher: 'Veuillez sélectionner le bon'
+				pleaseSelectVoucher: 'Veuillez sélectionner le bon',
+				textColor: 'Couleur du texte'
 			}
 		}
 		if (lang == 'german') {
 			languageData = {
 				voucherSelection: 'Gutscheinauswahl',
-				pleaseSelectVoucher: 'Bitte Gutschein auswählen'
+				pleaseSelectVoucher: 'Bitte Gutschein auswählen',
+				textColor: 'Textfarbe'
 			}
 		}
 		if (lang == 'spanish') {
 			languageData = {
 				voucherSelection: 'Selección de cupones',
-				pleaseSelectVoucher: 'Por favor seleccione el cupón'
+				pleaseSelectVoucher: 'Por favor seleccione el cupón',
+				textColor: 'Color de texto'
 			}
 		}
 	}
@@ -113,6 +117,7 @@ $(document).ready(function(){
 
 
 			$('#replaceable').replaceWith(output);
+			$('#label-text-color').html(languageData.textColor)
             
         	}
         });
