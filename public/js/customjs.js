@@ -140,7 +140,7 @@ $(document).ready(function(){
 			$('#label-text-color').text(languageData.textColor)
 			$('#label-button-color').text(languageData.buttonColor)
 			$('#delivery-type').text(languageData.deliveryType)
-			$('#new-voucher-code').text(languageData.newVoucherCode)
+			$('#new-voucher-code').html(languageData.newVoucherCode)
 			$('#same-voucher-code').text(languageData.sameVoucherCode)
 			$('#insert-voucher').text(languageData.insertVoucher)
             
