@@ -117,7 +117,7 @@ $(document).ready(function(){
 
 
 			$('#replaceable').replaceWith(output);
-			$('#label-text-color').html(languageData.textColor)
+			$('#label-text-color').text(languageData.textColor)
             
         	}
         });
