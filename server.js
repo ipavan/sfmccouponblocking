@@ -96,6 +96,15 @@ app.get('/getLanguage', (req, res) => {
 
 });
 
+app.get('/getSharingRules', (req, res) => {
+	if (process.env.DETYPE) {
+		res.send(process.env.DETYPE);
+	} else {
+		res.send('dataextension');
+	}
+
+});
+
 
 app.get('/getDEs', (req, res) => {
 	//I should get an access token if I need one, also

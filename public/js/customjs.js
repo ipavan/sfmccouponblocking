@@ -3,6 +3,7 @@ $(document).ready(function(){
 	var sdk = new window.sfdc.BlockSDK();
 
 	var language = 'English';
+	var ampscriptPrefix = '';
 
 	var languageData = {};
 	
@@ -46,10 +47,23 @@ $(document).ready(function(){
 		})
 	}
 
+	function getSharingRules() {
+		$.ajax({
+			type: "GET",
+			url: "/getSharingRules",
+			success: function(res) {
+				if (res == 'shared_dataextension') {
+					ampscriptPrefix = 'ENT.';
+				}
+			}
+		})
+	}
+
 	function setLanguage(l) {
 		let lang = l.toLowerCase();
 		if (lang == 'english') {
 			languageData = {
+				headerDescription: 'Insert voucher codes easily and flexibly',
 				voucherSelection: 'Voucher selection',
 				pleaseSelectVoucher: 'Please select voucher',
 				textColor: 'Text Color',
@@ -62,6 +76,7 @@ $(document).ready(function(){
 		}
 		if (lang == 'french') {
 			languageData = {
+				headerDescription: 'Insérez les codes de bon facilement et avec souplesse',
 				voucherSelection: 'Sélection des bons',
 				pleaseSelectVoucher: 'Veuillez sélectionner le bon',
 				textColor: 'Couleur du texte',
@@ -74,6 +89,7 @@ $(document).ready(function(){
 		}
 		if (lang == 'german') {
 			languageData = {
+				headerDescription: 'Gutscheincodes einfach und flexibel einfügen',
 				voucherSelection: 'Gutscheinauswahl',
 				pleaseSelectVoucher: 'Bitte Gutschein auswählen',
 				textColor: 'Textfarbe',
@@ -81,11 +97,12 @@ $(document).ready(function(){
 				deliveryType: 'Wie möchten Sie Ihren Gutschein ausliefern?',
 				newVoucherCode: 'Weisen Sie beim erneuten Senden einen <u>neuen</u> Gutscheincode zu',
 				sameVoucherCode: 'Verwenden Sie denselben Gutscheincode beim erneuten Senden',
-				insertVoucher: 'Gutschein einlegen'
+				insertVoucher: 'Gutschein einfügen'
 			}
 		}
 		if (lang == 'spanish') {
 			languageData = {
+				headerDescription: 'Insertar códigos de cupones de forma fácil y flexible',
 				voucherSelection: 'Selección de cupones',
 				pleaseSelectVoucher: 'Por favor seleccione el cupón',
 				textColor: 'Color de texto',
@@ -154,7 +171,7 @@ $(document).ready(function(){
     });
 
     function setSDKData() {
-    	var sel = $('#dename').val();
+    	var sel = ampscriptPrefix + $('#dename').val();
 
     	let newCoupon = $("#radio-11").is(":checked");
 		let textColor = $('#text-color').val();
