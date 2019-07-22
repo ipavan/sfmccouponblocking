@@ -166,7 +166,8 @@ app.get('/getDEs', (req, res) => {
 				});
 				res.send(voucherDEs);
 			});
-		});
+		})
+		.catch(error => console.log(error));
 	}
 
 });
@@ -187,8 +188,14 @@ function getListOfDataExtensions(accessToken) {
 			};
 
         request(options, (err, res) => {
-			if (err) reject(err);
-			else resolve(res);
+			if (err) {
+				console.log(err);
+				reject(err);
+			}
+			else {
+				console.log(res);
+				resolve(res);
+			}
 		})
 	});
 
