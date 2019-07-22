@@ -130,6 +130,10 @@ app.get('/getDEs', (req, res) => {
 			//get journeys
 			getListOfDataExtensions(global.marketingCloudAccessToken.access_token).then((response) => {
 				parseString(response['body'], function (err, result) {
+					if (err) {
+						console.log(err);
+						reject(err);
+					}
 				    let envelope = result['soap:Envelope']['soap:Body'][0]['RetrieveResponseMsg'][0];
 				    let results = envelope['Results'];
 				    if (results) {
@@ -161,11 +165,14 @@ app.get('/getDEs', (req, res) => {
 				}
 			    let envelope = result['soap:Envelope']['soap:Body'][0]['RetrieveResponseMsg'][0];
 			    let results = envelope['Results'];
-			    results.forEach(function (item) {
-			    	let name = item['Name'][0]
-				    //console.log(name);
-				    voucherDEs.push(name);
-				});
+			    if (results.length > 0) {
+			    	results.forEach(function (item) {
+				    	let name = item['Name'][0]
+					    //console.log(name);
+					    voucherDEs.push(name);
+					});
+			    }
+			    console.log(voucherDEs);
 				res.send(voucherDEs);
 			});
 		})
@@ -195,7 +202,6 @@ function getListOfDataExtensions(accessToken) {
 				reject(err);
 			}
 			else {
-				console.log(res);
 				resolve(res);
 			}
 		})
