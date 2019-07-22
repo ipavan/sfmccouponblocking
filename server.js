@@ -150,6 +150,10 @@ app.get('/getDEs', (req, res) => {
 			console.log(response);
 
 			parseString(response['body'], function (err, result) {
+				if (err) {
+					console.log(err);
+					reject(err);
+				}
 				console.log(result);
 			    let envelope = result['soap:Envelope']['soap:Body'][0]['RetrieveResponseMsg'][0];
 			    let results = envelope['Results'];
