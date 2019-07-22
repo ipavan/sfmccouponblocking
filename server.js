@@ -147,7 +147,10 @@ app.get('/getDEs', (req, res) => {
 		//get journeys
 		getListOfDataExtensions(global.marketingCloudAccessToken.access_token).then((response) => {
 
+			console.log(response);
+
 			parseString(response['body'], function (err, result) {
+				console.log(result);
 			    let envelope = result['soap:Envelope']['soap:Body'][0]['RetrieveResponseMsg'][0];
 			    let results = envelope['Results'];
 			    results.forEach(function (item) {
