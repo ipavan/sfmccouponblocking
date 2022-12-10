@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "fuel-rest": "^3.2.1",
     "request-promise": "^4.2.4",
     "xml2js": "^0.4.19"
